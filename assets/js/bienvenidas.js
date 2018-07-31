@@ -85,6 +85,38 @@ function search() {
     window.location.href = "../html/registrodatos.html"
 }
 
+var video;
+var canvas;
+var context;
+var imgURL;
+function snapphoto() {  
+video = document.getElementById('video');
+canvas = document.getElementById('canvas');
+context = canvas.getContext('2d');
+
+navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.
+mozGetUserMedia || navigator.oGetUserMedia || navigator.msGetUserMedia;
+
+if(navigator.getUserMedia) {
+    navigator.getUserMedia({video:true}, streamWebCam, throwError);
+}
+
+function streamWebCam (stream) {
+    video.src = window.URL.createObjectURL(stream);
+    video.play();
+}
+
+function throwError (e) {
+    alert(e.name + "Debes permitir la cámara");
+} }
+
+function snap() {
+    canvas.width = video.clientWidth;
+    canvas.height = video.clientHeight;
+    context.drawImage(video, 0, 0);
+    imgURL = canvas.toDataURL('image/png');
+    console.log(imgURL);
+}
 
 // Guardar datos en la data firebase
 function save_user(){
@@ -115,7 +147,8 @@ function save_user(){
         rut: rut,
         motivo: motivoVisita,
         hora: tiempo,
-        fecha: days
+        fecha: days,
+        imgurl: imgURL
     }
 
    var updates = {};

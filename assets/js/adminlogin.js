@@ -24,16 +24,15 @@ databaseRef.once('value', function(snapshot) {
         divcreator.classList = 'divcreator';
         let row = document.createElement('div');
         row.classList = 'row';
-        let rowcreator = document.createElement('div');
-        rowcreator.classList = 'row';
+        
         let col12 = document.createElement('div');
-        col12.classList = 'col s12 texto';
+        col12.classList = 'col s6 m6 l6 xl6';
         let col6creator = document.createElement('div');
-        col6creator.classList = 'col s6';        
+        col6creator.classList = 'col s6 m6 l6 xl6';        
         let pcreator = document.createElement('p');
         let ptexto =  document.createElement('p');
-        let textcreator = document.createTextNode(childData.nombre + ' ' + childData.apellido);
-        let date = document.createTextNode(childData.hora);
+        let textcreator = document.createTextNode(childData.nombre + '  ' + childData.apellido);
+        let date = document.createTextNode(childData.hora + '  ');
         let company = document.createTextNode("empresa");
 
         
@@ -43,8 +42,7 @@ databaseRef.once('value', function(snapshot) {
     row.appendChild(col12);
     col12.appendChild(ptexto);        
     col6creator.appendChild(pcreator);
-    rowcreator.appendChild(col6creator);
-    contenedor.appendChild(rowcreator);        
+    row.appendChild(col6creator);       
     contenedor.appendChild(row);
   });
 });  
