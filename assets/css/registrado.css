@@ -1,0 +1,16 @@
+body{
+  background-color: black;
+}
+h1{
+  color:white;
+  font-family: "Roboto Mono";
+  text-align: center;
+  font-size: 90px;
+}
+
+img{
+  transform: translate(500px,50px);
+  width: 300px;
+  height: 300px;
+  border-radius: 30px;
+}

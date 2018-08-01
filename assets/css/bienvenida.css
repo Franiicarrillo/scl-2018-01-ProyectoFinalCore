@@ -39,6 +39,11 @@ background-color: rgba(255,84,0,0.84);
 opacity: 0.9;
 }
 
+.mdl-button{
+  transform: translate(0,200px);
+  padding: 20px;
+}
+}
 
 @media (max-width:630px) {
   h1{
@@ -120,5 +125,3 @@ img{display: none;}
   max-width: 56px;
   height: 56px;
 }
-
-
