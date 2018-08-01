@@ -32,13 +32,18 @@ databaseRef.once('value', function(snapshot) {
         let pcreator = document.createElement('p');
         let ptexto =  document.createElement('p');
         let textcreator = document.createTextNode(childData.nombre + '  ' + childData.apellido);
-        let date = document.createTextNode(childData.hora + '  ');
-        let company = document.createTextNode("empresa");
+        pcreator.classList = 'nametext';
+     /*   let date = document.createTextNode(childData.hora + '  ');
+        let company = document.createTextNode("empresa"); */
+        let visitIMG = document.createElement('img');
+        visitIMG.classList = 'visitimg';
+        visitIMG.setAttribute('src', childData.imgurl);
 
-        
-        pcreator.appendChild(date);
+
+        col12.appendChild(visitIMG);
+       // pcreator.appendChild(date);
     pcreator.appendChild(textcreator);
-    pcreator.appendChild(company);
+    //pcreator.appendChild(company);
     row.appendChild(col12);
     col12.appendChild(ptexto);        
     col6creator.appendChild(pcreator);
